@@ -5,12 +5,12 @@ import conta.Conta;
 public class Cliente extends Thread{
     private String nome;
     private int cpf;
-    private Conta valorInicial;
+    private Conta conta;
 
-    public Cliente(String nome, int cpf, double valorInicial) {
+    public Cliente(String nome, int cpf, int numConta, double valorInicial) {
         this.nome = nome;
         this.cpf = cpf;
-        this.valorInicial = new Conta(valorInicial);
+        this.conta = new Conta(numConta, valorInicial);
     }
 
     public String getNome() {
@@ -18,7 +18,7 @@ public class Cliente extends Thread{
     }
 
     public Conta getValorInicial() {
-        return valorInicial;
+        return conta;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Cliente extends Thread{
         return "Cliente{" +
                 "nome='" + nome + '\'' +
                 ", cpf=" + cpf +
-                ", valorInicial=" + valorInicial +
+                ", conta=" + conta +
                 '}';
     }
 }
