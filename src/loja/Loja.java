@@ -21,8 +21,8 @@ public class Loja {
         this.funcionariosEmpresa = new ArrayList<>();
     }
 
-    public void addFuncionarios(Funcionario funcrionario) {
-        funcionariosEmpresa.add(funcrionario);
+    public void addFuncionarios(Funcionario funcionario) {
+        funcionariosEmpresa.add(funcionario);
     }
 
     public Conta getConta() {
@@ -33,7 +33,7 @@ public class Loja {
         if(cliente.getConta().getSaldo() >= valor) {
             cliente.getConta().debitarSaldo(valor);
             conta.depositarValor(valor);
-            System.out.println(String.format("O cliente %d gastou na loja %2.f uma quantia de %.2f", cliente.getId(), valor, this.hashCode()));
+            System.out.println(String.format("O cliente %d gastou na loja %d uma quantia de %.2f", cliente.getId(), this.hashCode(), valor));
             pagarFuncionario();
         }
     }
@@ -43,6 +43,7 @@ public class Loja {
             if(conta.getSaldo() >= 1400.0) {
                 conta.debitarSaldo(1400.0);
                 item.receberPagamento(1400.0);
+                System.out.println("Foi realizado o pagamento para o funcionário " + item.getNome() + " no valor de R$: 1400.00");
             }
         }
     }
