@@ -2,6 +2,8 @@ package loja;
 
 import conta.Conta;
 import funcionario.Funcionario;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Loja {
@@ -16,17 +18,22 @@ public class Loja {
         this.endereco = endereco;
         this.nomeLoja = nomeLoja;
         this.conta = new Conta(numConta, saldo);
+        this.funcionariosEmpresa = new ArrayList<>();
     }
 
     public void addFuncionarios(Funcionario funcrionario) {
         funcionariosEmpresa.add(funcrionario);
     }
 
+    public Conta getConta() {
+        return conta;
+    }
+
     public synchronized void realizarCompra(Cliente cliente, double valor) {
         if(cliente.getConta().getSaldo() >= valor) {
             cliente.getConta().debitarSaldo(valor);
             conta.depositarValor(valor);
-            System.out.println(String.format("O cliente %d gastou na loja %d uma quantia de %2.lf", cliente.getId(), valor, this.hashCode()));
+            System.out.println(String.format("O cliente %d gastou na loja %2.f uma quantia de %.2f", cliente.getId(), valor, this.hashCode()));
             pagarFuncionario();
         }
     }

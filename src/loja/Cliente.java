@@ -14,14 +14,11 @@ public class Cliente extends Thread{
     private List<Double> valoresGasto = Arrays.asList(100.0, 200.0);
     private int indexCompra = 0;
 
-    public Cliente(String nome, int cpf, int numConta, double valorInicial) {
+    public Cliente(String nome, int cpf, int numConta, double valorInicial, List<Loja> lojas) {
         this.nome = nome;
         this.cpf = cpf;
         this.conta = new Conta(numConta, valorInicial);
-    }
-
-    public void addLoja(Loja loja) {
-        lojas.add(loja);
+        this.lojas = lojas;
     }
 
     public String getNome() {
@@ -42,6 +39,8 @@ public class Cliente extends Thread{
 
     @Override
     public void run() {
+        // System.out.println(valoresGasto.size());
+        // System.out.println(lojas.size());
         while(conta.getSaldo() >= valoresGasto.get(indexCompra % 2)) {
             double valor = valoresGasto.get(indexCompra % 2);
             Loja loja = lojas.get(indexCompra % lojas.size());
@@ -52,7 +51,6 @@ public class Cliente extends Thread{
             está sendo passado como parâmetro. Isso permite que a loja (representada pela instância da classe
             Loja) saiba qual cliente está fazendo a compra.
              */
-
             loja.realizarCompra(this, valor);
             indexCompra++;
         }
