@@ -24,4 +24,15 @@ public class Funcionario extends Thread {
     public Conta getContaInvestimentos() {
         return contaInvestimentos;
     }
+
+    public void receberPagamento(double valor) {
+        contaSalario.depositarValor(valor);
+        realizarInvestimento();
+    }
+
+    public void realizarInvestimento() {
+        double investimento = contaSalario.getSaldo() * 0.2; // Deve investir 20%.
+        contaInvestimentos.depositarValor(investimento);
+        System.out.println(String.format("O funcionário(a) %s identificado por %d investiu um quantia de R$: %2.lf", this.nome, getId(), investimento));
+    }
 }
