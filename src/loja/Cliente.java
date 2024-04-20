@@ -14,18 +14,21 @@ public class Cliente extends Thread{
     private List<Double> valoresGasto = Arrays.asList(100.0, 200.0);
     private int indexCompra = 0;
 
-    public Cliente(String nome, int cpf, int numConta, double valorInicial, List<Loja> lojas) {
+    public Cliente(String nome, int cpf, int numConta, double valorInicial) {
         this.nome = nome;
         this.cpf = cpf;
         this.conta = new Conta(numConta, valorInicial);
-        this.lojas = lojas;
+    }
+
+    public void addLoja(Loja loja) {
+        lojas.add(loja);
     }
 
     public String getNome() {
         return nome;
     }
 
-    public Conta getValorInicial() {
+    public Conta getConta() {
         return conta;
     }
 

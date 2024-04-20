@@ -32,6 +32,15 @@ public class Conta {
         }
     }
 
+    public void depositarValor(double valor) {
+        lock.lock();
+        try {
+            this.saldo += valor;
+        } finally {
+            lock.unlock();
+        }
+    }
+
     @Override
     public String toString() {
         return "Conta{" +
