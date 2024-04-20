@@ -1,20 +1,19 @@
 package loja;
 
 import conta.Conta;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Cliente extends Thread{
     private String nome;
-    private int cpf;
+    private String cpf;
     private Conta conta;
     private List<Loja> lojas;
     private List<Double> valoresGasto = Arrays.asList(100.0, 200.0);
     private int indexCompra = 0;
 
-    public Cliente(String nome, int cpf, int numConta, double valorInicial, List<Loja> lojas) {
+    public Cliente(String nome, String cpf, int numConta, double valorInicial, List<Loja> lojas) {
         this.nome = nome;
         this.cpf = cpf;
         this.conta = new Conta(numConta, valorInicial);
@@ -27,10 +26,6 @@ public class Cliente extends Thread{
 
     public Conta getConta() {
         return conta;
-    }
-
-    public void realizarCompra() {
-
     }
 
     public List<Loja> getLojas() {

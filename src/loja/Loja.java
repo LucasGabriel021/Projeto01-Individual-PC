@@ -29,11 +29,15 @@ public class Loja {
         return conta;
     }
 
+    /*
+    * O método realizar compra utiliza da palavra-chave "synchronized", ele permite a utilização da Thread
+    * sem que haja interfência e erros por memória.
+    * */
     public synchronized void realizarCompra(Cliente cliente, double valor) {
         if(cliente.getConta().getSaldo() >= valor) {
             cliente.getConta().debitarSaldo(valor);
             conta.depositarValor(valor);
-            System.out.println(String.format("O cliente %d gastou na loja %d uma quantia de %.2f", cliente.getId(), this.hashCode(), valor));
+            System.out.println(String.format("O cliente %s(%d) gastou na loja %s(%d) uma quantia de R$: %.2f. Seu saldo bancário é R$: %.2f.", cliente.getNome(), cliente.getId(), this.getNomeLoja(), this.hashCode(), valor, cliente.getConta().getSaldo()));
             pagarFuncionario();
         }
     }
@@ -42,8 +46,8 @@ public class Loja {
         for (Funcionario item: funcionariosEmpresa) {
             if(conta.getSaldo() >= 1400.0) {
                 conta.debitarSaldo(1400.0);
+                System.out.println("\nFoi realizado o pagamento para o funcionário " + item.getNome() + " no valor de R$: 1400.00 pela Loja " + this.getNomeLoja() + ".");
                 item.receberPagamento(1400.0);
-                System.out.println("Foi realizado o pagamento para o funcionário " + item.getNome() + " no valor de R$: 1400.00");
             }
         }
     }

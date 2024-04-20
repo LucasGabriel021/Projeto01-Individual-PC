@@ -3,7 +3,6 @@ package banco;
 import funcionario.Funcionario;
 import loja.Cliente;
 import loja.Loja;
-
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,10 +29,10 @@ public class Banco {
         List<Loja> lojas = Arrays.asList(loja01, loja02);
 
         // Criar clientes
-        Cliente cliente01 = new Cliente("Marco Reus", 1111111111, 111, 1000, lojas);
-        Cliente cliente02 = new Cliente("David Silva", 212121212, 212, 1000, lojas);
-        Cliente cliente03 = new Cliente("Harry Kane", 999999999, 999, 1000, lojas);
-        Cliente cliente04 = new Cliente("Steven Gerrard", 888888888, 888, 1000, lojas);
+        Cliente cliente01 = new Cliente("Marco Reus", "1111111111", 111, 1000, lojas);
+        Cliente cliente02 = new Cliente("David Silva", "212121212", 212, 1000, lojas);
+        Cliente cliente03 = new Cliente("Harry Kane", "999999999", 999, 1000, lojas);
+        Cliente cliente04 = new Cliente("Steven Gerrard", "888888888", 888, 1000, lojas);
 
         // Dados em arrays
         List<Funcionario> funcionarios = Arrays.asList(funcionario01, funcionario02, funcionario03, funcionario04);
@@ -63,14 +62,14 @@ public class Banco {
         }
 
         // Dados Finais
-        System.out.println("Saldo final das lojas: ");
+        System.out.println("\n\nSaldo final das lojas: ");
         for(Loja item : lojas) {
-            System.out.println(String.format("A loja %s de id %d possui um saldo de R$: %.2f", item.getNomeLoja(), item.hashCode(), item.getConta().getSaldo()));
+            System.out.println(String.format("A loja %s(%d) possui um saldo de R$: %.2f na conta bancária", item.getNomeLoja(), item.hashCode(), item.getConta().getSaldo()));
         }
 
-        System.out.println("Saldo final dos cliente: ");
+        System.out.println("\nSaldo final dos cliente: ");
         for(Cliente item : clientes) {
-            System.out.println(String.format("O cliente(a) %s com id: %d possui saldo de R$ %.2f", item.getNome(), item.getId(), item.getConta().getSaldo()));
+            System.out.println(String.format("O cliente(a) %s(%d) possui saldo de R$ %.2f em sua conta bancária", item.getNome(), item.getId(), item.getConta().getSaldo()));
         }
 
     }
