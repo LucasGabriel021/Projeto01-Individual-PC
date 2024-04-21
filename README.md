@@ -23,9 +23,9 @@ Quantidade de objetos instânciado para execução do projeto:
 
 ## 🛠️ Construído com
 
-* [JAVA](http://www.dropwizard.io/1.0.2/docs/) - Linguagem utilizada
-* [Git](https://maven.apache.org/) - Ferramenta de Versionameto do código
-* [GitHub](https://rometools.github.io/rome/) - Repositório Remoto
+* [JAVA](https://docs.oracle.com/en/java/) - Linguagem utilizada
+* [Git](https://git-scm.com/) - Ferramenta de Versionameto do código
+* [GitHub](https://github.com/) - Repositório Remoto
 
 
 ## ✒️ Autores
