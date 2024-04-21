@@ -7,15 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Loja {
-    private int cnpj;
-    private String endereco;
     private String nomeLoja;
     private Conta conta;
     private List<Funcionario> funcionariosEmpresa;
 
-    public Loja(int cnpj, String endereco, String nomeLoja, int numConta, double saldo) {
-        this.cnpj = cnpj;
-        this.endereco = endereco;
+    public Loja(String nomeLoja, int numConta, double saldo) {
         this.nomeLoja = nomeLoja;
         this.conta = new Conta(numConta, saldo);
         this.funcionariosEmpresa = new ArrayList<>();
@@ -50,10 +46,6 @@ public class Loja {
                 item.receberPagamento(1400.0);
             }
         }
-    }
-
-    public String getEndereco() {
-        return endereco;
     }
 
     public String getNomeLoja() {

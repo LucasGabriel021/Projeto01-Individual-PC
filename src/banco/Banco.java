@@ -11,14 +11,14 @@ import java.util.List;
 public class Banco {
     public static void main(String[] args) {
         // Criar lojas
-        Loja loja01 = new Loja(777777, "Quadra 100", "Americanas", 777, 0);
-        Loja loja02 = new Loja(888888, "Quadra 200", "Fujioka", 888, 0);
+        Loja loja01 = new Loja("Botafogo Store", 777, 0);
+        Loja loja02 = new Loja("Reebok", 888, 0);
 
         //Criar funcionários
-        Funcionario funcionario01 = new Funcionario("Lucas", 333333, 0, 0);
-        Funcionario funcionario02 = new Funcionario("Gabriel", 121212, 0, 0);
-        Funcionario funcionario03 = new Funcionario("Marcos", 424242, 0, 0);
-        Funcionario funcionario04 = new Funcionario("Nathália", 666666, 0, 0);
+        Funcionario funcionario01 = new Funcionario("Tiquinho", 333333, 0, 0);
+        Funcionario funcionario02 = new Funcionario("Danilo", 121212, 0, 0);
+        Funcionario funcionario03 = new Funcionario("Eduardo", 424242, 0, 0);
+        Funcionario funcionario04 = new Funcionario("Hugo", 666666, 0, 0);
 
         // Add funcionários as lojas
         loja01.addFuncionarios(funcionario01);
@@ -29,10 +29,10 @@ public class Banco {
         List<Loja> lojas = Arrays.asList(loja01, loja02);
 
         // Criar clientes
-        Cliente cliente01 = new Cliente("Marco Reus", "1111111111", 111, 1000, lojas);
-        Cliente cliente02 = new Cliente("David Silva", "212121212", 212, 1000, lojas);
-        Cliente cliente03 = new Cliente("Harry Kane", "999999999", 999, 1000, lojas);
-        Cliente cliente04 = new Cliente("Steven Gerrard", "888888888", 888, 1000, lojas);
+        Cliente cliente01 = new Cliente("Evelyn", "1111111111", 111, 1000, lojas);
+        Cliente cliente02 = new Cliente("Lucas", "212121212", 212, 1000, lojas);
+        Cliente cliente03 = new Cliente("Gilsimar", "999999999", 999, 1000, lojas);
+        Cliente cliente04 = new Cliente("Christian", "888888888", 888, 1000, lojas);
 
         // Dados em arrays
         List<Funcionario> funcionarios = Arrays.asList(funcionario01, funcionario02, funcionario03, funcionario04);
