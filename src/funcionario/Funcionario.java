@@ -35,4 +35,9 @@ public class Funcionario extends Thread {
         contaInvestimentos.depositarValor(investimento);
         System.out.println(String.format("Após o pagamento %s(%d) investiu um quantia de R$: %.2f na bolsa de valores.\n", this.nome, getId(), investimento));
     }
+
+    @Override
+    public void run() {
+        realizarInvestimento();
+    }
 }
