@@ -59,7 +59,6 @@ public class Cliente extends Thread{
                 ", conta=" + conta +
                 ", lojas=" + lojas +
                 ", valoresGasto=" + valoresGasto +
-                ", indexCompra=" + indexCompra +
                 '}';
     }
 }

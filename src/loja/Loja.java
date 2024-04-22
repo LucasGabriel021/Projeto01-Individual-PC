@@ -2,7 +2,6 @@ package loja;
 
 import conta.Conta;
 import funcionario.Funcionario;
-
 import java.util.ArrayList;
 import java.util.List;
 
